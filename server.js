@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 
+import eventRoutes from "./routes/eventRoutes.js";
+
 dotenv.config();
 
 const app = express();
@@ -27,3 +29,6 @@ mongoose
     );
 })
 .catch((err) => console.error("MongoDB Connection Error : " ,err));
+
+// Routes 
+app.use("/api",eventRoutes);
