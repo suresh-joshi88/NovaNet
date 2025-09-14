@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import { protect } from "./middleware/authMiddleware.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import correlationRoutes from "./routes/correlationRoutes.js";
+import { errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -37,3 +38,4 @@ mongoose
 
 // Routes 
 app.use("/api",eventRoutes);
+app.use(errorHandler);
