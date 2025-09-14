@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import authRoutes from "./routes/authRoutes.js";
 import { protect } from "./middleware/authMiddleware.js";
 import eventRoutes from "./routes/eventRoutes.js";
+import correlationRoutes from "./routes/correlationRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth",authRoutes);
 app.use("/api/events",protect,eventRoutes);
+app.use("/api",correlationRoutes);
 
 // For testing Routes
 app.get("/",(req,res) => {
