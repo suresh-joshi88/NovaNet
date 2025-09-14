@@ -7,6 +7,6 @@ const upload = multer({dest:"uploads/"});
 
 router.post("/events",createEvent);
 router.get("/events",getEvents);
-router.post("/events/uploads",upload.single("file"),uploadEvents);
+router.post("/events/upload",upload.single("file"),uploadEvents);
 
 export default router;
