@@ -3,7 +3,8 @@ import mongoose, { mongo } from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
-
+import authRoutes from "./routes/authRoutes.js";
+import { protect } from "./middleware/authMiddleware.js";
 import eventRoutes from "./routes/eventRoutes.js";
 
 dotenv.config();
@@ -13,6 +14,8 @@ const app = express();
 // Middlewares that I am using 
 app.use(cors());
 app.use(express.json());
+app.use("/api/auth",authRoutes);
+app.use("/api/events",protect,eventRoutes);
 
 // For testing Routes
 app.get("/",(req,res) => {
