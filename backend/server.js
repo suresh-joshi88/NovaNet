@@ -8,6 +8,7 @@ import { protect } from "./middleware/authMiddleware.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import correlationRoutes from "./routes/correlationRoutes.js";
 import { errorHandler } from "./middleware/errorMiddleware.js";
+import clusterRoutes from "./routes/clusterRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/auth",authRoutes);
 app.use("/api/events",protect,eventRoutes);
 app.use("/api",correlationRoutes);
+app.use("/api/clusters", clusterRoutes);
 
 // For testing Routes
 app.get("/",(req,res) => {

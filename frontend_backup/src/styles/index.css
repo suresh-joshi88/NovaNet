@@ -1,0 +1,4 @@
+:root { --bg:#fafafa; --muted:#666; }
+body { font-family: Arial, Helvetica, sans-serif; margin:0; background:var(--bg); color:#222; }
+input, textarea, button { padding:8px; margin:6px 0; font-size:14px; }
+button { cursor:pointer; }

@@ -1,0 +1,19 @@
+
+[
+  {
+    "source": "MockNeutrino",
+    "type": "neutrino",
+    "time": "2021-10-01T10:00:00Z",
+    "ra": 210.12,
+    "dec": -5.3,
+    "metadata": { "note": "IceCube-like mock" }
+  },
+  {
+    "source": "MockGamma",
+    "type": "gamma-ray",
+    "time": "2021-10-01T10:02:00Z",
+    "ra": 210.15,
+    "dec": -5.28,
+    "metadata": { "note": "Fermi-like mock" }
+  }
+]
